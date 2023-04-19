@@ -1,10 +1,20 @@
 import "./App.scss";
-import { Task } from "@components";
+import { AddTask, Board, Button, Input, Task } from "@components";
 
 const App = () => {
   return (
     <div className="App">
-      Hola Mundo <Task></Task>
+      <Button text="Bustton" kind="primary" />
+      <Input type="text" />
+      <AddTask />
+      <Board />
+      <Task
+        onCancel={() => console.log("Cancel")}
+        onOk={(value) => console.log("Ok", { value })}
+        doTask={() => console.log("Do Task")}
+        restoreTask={() => console.log("Do Task")}
+        isDone={false}
+      />
     </div>
   );
 };

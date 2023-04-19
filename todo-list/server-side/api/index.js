@@ -34,6 +34,7 @@ api.put("/task", (req, res) => {
     const newTask = {
       id: uuidv4(),
       description,
+      isDone: false,
     };
 
     tasks.push(newTask);
@@ -52,7 +53,7 @@ api.put("/task", (req, res) => {
 
 api.post("/task/:id", (req, res) => {
   const { id } = req.params;
-  const { description } = req.body;
+  const { description, isDone } = req.body;
 
   jsonReader(TASKS_PATH, (err, data) => {
     if (err) {
@@ -64,7 +65,8 @@ api.post("/task/:id", (req, res) => {
     const { tasks } = data;
     const taskIndex = tasks.findIndex((task) => task.id === id);
 
-    tasks[taskIndex].description = description;
+    if (description) tasks[taskIndex].description = description;
+    if (typeof isDone === "boolean") tasks[taskIndex].isDone = isDone;
 
     fs.writeFile(TASKS_PATH, JSON.stringify({ tasks }), (err) => {
       if (err) {
