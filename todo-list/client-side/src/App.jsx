@@ -1,21 +1,15 @@
-import "./App.scss";
-import { AddTask, Board, Button, Input, Task } from "@components";
+import { useRef } from 'react';
+import './App.scss';
+import { AddTask, Board, Button, Input, Task } from '@components';
+import { BoardProvider } from '@contexts/BoardContext';
 
 const App = () => {
   return (
-    <div className="App">
-      <Button text="Bustton" kind="primary" />
-      <Input type="text" />
-      <AddTask />
-      <Board />
-      <Task
-        onCancel={() => console.log("Cancel")}
-        onOk={(value) => console.log("Ok", { value })}
-        doTask={() => console.log("Do Task")}
-        restoreTask={() => console.log("Do Task")}
-        isDone={false}
-      />
-    </div>
+    <>
+      <BoardProvider>
+        <Board />
+      </BoardProvider>
+    </>
   );
 };
 

@@ -1,22 +1,22 @@
-import { forwardRef } from "react";
-import "./styles.scss";
-import clsx from "clsx";
+import { forwardRef, useRef } from 'react';
+import './styles.scss';
+import clsx from 'clsx';
 
-const namespace = "input";
+const namespace = 'input';
 
-export const Input = forwardRef((props, inputRef) => {
-  const { value, type, onFocus, onBlur, onChange, disabled } = props;
+export const Input = forwardRef((props, ref) => {
+  const { value, type, onFocus, onBlur, onChange, disabled, autoFocus } = props;
   const classnames = clsx(namespace);
 
   return (
     <input
-      ref={inputRef}
+      ref={ref}
       className={classnames}
       type={type}
       onFocus={onFocus}
       onBlur={onBlur}
       onChange={onChange}
-      autoFocus="autofocus"
+      autoFocus={autoFocus}
       disabled={disabled}
       value={value}
     />
