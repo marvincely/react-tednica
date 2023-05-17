@@ -1,4 +1,10 @@
-import { urls } from './urls';
+import { urls } from "./urls";
+
+const methods = {
+  PUT: "PUT",
+  POST: "POST",
+  DELETE: "DELETE",
+};
 
 async function makeRequest(url, options = {}) {
   const { body } = options;
@@ -19,14 +25,20 @@ export const taskApi = {
   },
   createTask: async (body) => {
     const url = urls.task.put();
-    const { status, data } = await makeRequest(url, { method: 'PUT', body });
+    const { status, data } = await makeRequest(url, {
+      method: methods.PUT,
+      body,
+    });
 
     return data.id;
   },
   updateTask: async (body) => {
     const { id, ...restBody } = body;
     const url = urls.task.post(id);
-    const { status, data } = await makeRequest(url, { method: 'POST', body: restBody });
+    const { status, data } = await makeRequest(url, {
+      method: methods.POST,
+      body: restBody,
+    });
 
     return data;
   },
@@ -34,7 +46,7 @@ export const taskApi = {
     const { id } = body;
     const url = urls.task.delete(id);
 
-    const { status, data } = await makeRequest(url, { method: 'DELETE' });
+    const { status, data } = await makeRequest(url, { method: methods.DELETE });
 
     return status;
   },

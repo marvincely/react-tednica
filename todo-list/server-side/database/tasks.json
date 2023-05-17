@@ -1,7 +1,1 @@
-{
-  "tasks": [
-    { "id": "6afaf2b5-a6f1-43ee-9de1-7d79496f279c", "description": "Planificar Q", "isDone": true },
-    { "id": "edc81a9e-c491-4da8-a74e-ec66143dce23", "description": "Estudiar en Interactiva", "isDone": false },
-    { "id": "87ac039f-bfba-4050-a27d-b78f360de119", "description": "Repasar Javascript", "isDone": false }
-  ]
-}
+{"tasks":[{"id":"6afaf2b5-a6f1-43ee-9de1-7d79496f279c","description":"Planificar Q","isDone":true},{"id":"edc81a9e-c491-4da8-a74e-ec66143dce23","description":"Estudiar React Avanzado Udemy","isDone":false},{"id":"87ac039f-bfba-4050-a27d-b78f360de119","description":"Estudiar Python Platzi","isDone":false},{"id":"87ac0wer-4050-a27d-b78f360de119","description":"Estudiar JAvascript Avanzado","isDone":false},{"id":"87ac039f-bfba-4sdfa27d-b78f360de119","description":"Leer CLean Code O'Reilly","isDone":false},{"id":"a6569124-79df-441a-ab4f-c13d8037e931","description":"Adelantar Proyecto","isDone":false}]}
